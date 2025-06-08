@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<!-- Mirrored from dearlovevn.vercel.app/creator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 18:15:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo hạnh phúc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTY3RQNXTE"></script>
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="dialogthank.css">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTY3RQNXTE');
+</script>
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        #qrCode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#qrCode canvas {
+    border-radius: 15px;
+}
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #4ecdc4;
+        }
+        
+        .form-group textarea,
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(78, 205, 196, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgb(18, 168, 192);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+        }
+        
+        .color-picker-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .color-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .color-preview {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .icon-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .icon-option {
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            text-align: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-option:hover,
+        .icon-option.selected {
+            border-color: #4ecdc4;
+            background: rgba(78, 205, 196, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4ecdc4;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #4ecdc4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 15px;
+            border: 2px solid #4ecdc4;
+            margin-top: 2rem;
+        }
+        
+        .result-link {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        
+        .copy-btn {
+            background: transparent;
+            border: 2px solid #4ecdc4;
+            color: #4ecdc4;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(78, 205, 196, 0.2);
+        }
+
+        /* Custom checkbox style */
+.form-group input[type="checkbox"] {
+    accent-color: #4ecdc4;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px #4ecdc422;
+    transition: box-shadow 0.2s;
+}
+
+.form-group input[type="checkbox"]:focus {
+    outline: 2px solid #ff6b9d;
+    box-shadow: 0 0 0 3px #ff6b9d44;
+}
+
+/* Optional: make label text a bit larger for better touch */
+.form-group label {
+    font-size: 1.08em;
+    cursor: pointer;
+    user-select: none;
+}
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+             #viewBtn.btn {
+        width: 100%;
+        min-width: unset;
+        font-size: 1rem;
+        padding: 0.9rem 0.5rem;
+        margin-top: 6rem;
+    }
+            
+            .icon-selector {
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index-2.html" class="back-btn">
+            ← Về trang chủ
+        </a>
+        
+        <div class="header">
+            <h1>Gửi ngàn yêu thương</h1>
+            <p>
+                hãy gửi những lời yêu thương của bạn vào vũ trụ,
+            </p>
+        </div>
+        
+        <div class="form-container">
+            <form id="galaxyForm">
+                <div class="form-group">
+                    <label for="messages">Tin nhắn của bạn (mỗi dòng một tin nhắn):</label>
+                    <textarea 
+                        id="messages" 
+                        placeholder="Happy Birthday&#10;I love you&#10;Chúc mừng sinh nhật&#10;Yêu em nhiều lắm&#10;càng nhiều sẽ càng đẹp nhé..."
+                        required
+                    ></textarea>
+                    <small style="opacity: 0.7;">Mỗi dòng sẽ là một tin nhắn bay trong vũ trụ</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Chọn biểu tượng muốn hiển thị:</label>
+                    <div class="icon-selector" id="iconSelector">
+                        <div class="icon-option selected" data-icons='["♥", "💖", "💕", "💗"]'>♥💖💕💗</div>
+                        <div class="icon-option" data-icons='["🎉", "🎂", "🎈", "🎊"]'>🎉🎂🎈🎊</div>
+                        <div class="icon-option" data-icons='["🌟", "✨", "⭐", "🌠"]'>🌟✨ ⭐🌠</div>
+                        <div class="icon-option" data-icons='["🌸", "🌺", "🌻", "🌹"]'>🌸🌺🌻🌹</div>
+                        <div class="icon-option" data-icons='["🦋", "🐝", "🌈", "☀️"]'>🦋🐝🌈☀️</div>
+                        <div class="icon-option" data-icons='["😊", "😍", "🥰", "😘"]'>😊😍🥰😘</div>
+                    </div>
+                    <input type="text" id="customIcons" placeholder="Hoặc nhập icon riêng, cách nhau bởi dấu phẩy (VD: 🐱,🐶,🦄)" style="margin-top:1rem;width:100%;padding:0.5rem;">
+                </div>
+                
+            
+                
+                <div class="form-group">
+                    <label for="song">Chọn bài hát (có thể bỏ qua):</label>
+            
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 0.5rem;">
+                        khi xem hãy click vào màn hình để phát được nhạc nhé! một số máy android sẽ không hỗ trợ phát nhạc
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <select id="song">
+                            <option value="" selected>-- Chọn một bài hát có sẵn --</option>
+                            <option value="happy-birthday.html">Happy Birthday</option>
+                            <option value="happybirtday_uia.html">Happy Birthday Mèo U I A</option>
+                            <option value="happybirthday_domixi.html">Happy Birthday Độ Mixi</option>
+                            <option value="eyenoselip.html">Eyes, Nose, Lips</option>
+                            <option value="anhnangcuaanh.html">Anh nắng của anh</option>
+                            <option value="denbenanh.html">Đến bên anh "DangRangTo"</option>
+                            <option value="dunglamtraitimanhdau.html">Đừng làm trái tim anh đau</option>
+                            <option value="suynghitronganh.html">Suy nghĩ trong anh</option>
+                            <option value="yeuemhonmoingay.html">Yêu em hơn mỗi ngày</option>
+                            <option value="phepmau.html">Phép màu</option>
+                            <option value="lambantraianhe.html">Nhạc tỏ tình</option>
+
+                            <!-- Thêm các bài hát khác ở đây -->
+                        </select>
+                        <button type="button" id="previewDefaultSongBtn" title="Nghe thử bài hát mặc định"
+                        style ="width: 30px;height: 30px ; background: transparent; border: none; cursor: pointer; color: #4ecdc4;">
+                            🔊</button>
+                    </div>
+                    <div style="margin: 1rem 0; text-align:center;">— Hoặc —</div>
+                    <input type="url" id="customSongUrl" placeholder="Nhập link file nhạc (.mp3, .ogg, ...)" style="width:100%;margin-bottom:0.5rem;">
+                    <button type="button" id="checkSongBtn" style="margin-bottom:0.5rem;">🔊 Check Link Nhạc</button>
+                    <audio id="customSongAudio" controls style="display:none;width:100%;margin-top:0.5rem;"></audio>
+                </div>
+                
+                <div class="form-group">
+    <label for="images">Chọn ảnh (tối đa 5 ảnh, có thể bỏ qua):</label>
+    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 0.5rem;">
+        (ấn giữ Ctrl hoặc Shift để chọn nhiều ảnh khi dùng máy tính, hoặc chạm và giữ trên điện thoại)
+    </p>
+    <input type="file" id="images" accept="image/*" multiple style="width:100%;margin-bottom:0.5rem;">
+    <div id="imagePreview" style="display:flex;gap:10px;margin-top:10px;"></div>
+</div>
+                
+                <div class="form-group">
+    <label for="colorMain">Chọn màu cho tin nhắn:</label>
+    <div class="color-option">
+        <div class="color-preview" id="colorMainPreview" style="background: #ff6b9d;"></div>
+        <input type="color" id="colorMain" value="#ff6b9d" style="width:60px;height:40px;">
+    </div>
+</div>
+<div class="form-group">
+    <label>
+        <input type="checkbox" id="isHeart">
+        Trái tim đỏ
+    </label>
+    <input type="text" id="textHeart" placeholder="Nhập chữ trong trái tim(có thể bỏ trống)" style="margin-top:0.5rem;display:none;width:100%;padding:0.5rem;">
+</div>
+
+<div class="form-group">
+    <label>
+        <input type="checkbox" id="isSave">
+        Bạn có muốn QR này vĩnh viễn không? <span style="font-size:0.95em;opacity:0.7;">(Nếu không, QR sẽ hết hạn sau 1 tháng)</span>
+    </label>
+</div>
+                
+                <button type="submit" class="btn" id="submitBtn">
+                    ✨ Tạo yêu thương
+                </button>
+            </form>
+            
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Đang tạo nhé...</p>
+            </div>
+            
+            <div class="result" id="result">
+                <h3>🎉 Oce rồi đấy!</h3>
+                <p>Chia sẻ link này với bạn bè:</p>
+                <div class="result-link" id="resultLink"></div>
+                <button class="copy-btn" id="copyBtn">📋 Copy Link</button>
+                <br><br>
+                <a href="#" id="viewBtn" class="btn" target="_blank">🌌 Xem kết quả</a>
+                <div id="qrCode" style="margin-top: 4rem;"></div>
+                <button id="heartQRBtn" class="btn" type="button" style="margin-top:1rem;">❤️ Tạo QR trái tim</button>
+                <div id="mes" style="margin-top: 4rem;"> <p>
+                    Hãy gửi những lời yêu thương này tới người bạn yêu quý nhé! chúc bạn có một ngày thật tuyệt vời. Mình là Như Vũ 
+                    hãy liên hệ với mình qua <a href="https://www.facebook.com/_ng.nhuvu/" target="_blank"
+                        style="color: #fc5919; text-decoration: none;"
+                    >Facebook</a> nếu bạn cần giúp đỡ hoặc có ý tưởng gì mới nhé!
+                </p></div>
+                
+            </div>
+            
+        </div>
+        
+
+        <!-- Nút donate nổi -->
+<button id="donateBtn" style="
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 4px 24px #0004;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">💖</button>
+
+<!-- Dialog donate -->
+<div id="donateDialog" style="
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.45);
+  align-items: center;
+  justify-content: center;
+">
+  <div style="
+    background: #fff;
+    color: #222;
+    border-radius: 18px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 90vw;
+    width: 350px;
+    box-shadow: 0 8px 32px #0005;
+    text-align: center;
+    position: relative;
+  ">
+    <button id="closeDonateDialog" style="
+      position: absolute;
+      top: 12px; right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #888;
+      cursor: pointer;
+    " title="Đóng">&times;</button>
+    <h2 style="color:#ff6b9d;margin-bottom:0.5rem;">Ủng hộ tác giả</h2>
+    <p style="margin-bottom:1rem;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;color: #16213e;">Chào bạn, mình là Như Vũ. Nếu bạn thấy dự án này hữu ích, hãy ủng hộ mình để mình có thêm động lực nhé! Cảm ơn rất nhiều 💗</p>
+    <img src="qr.png" alt="QR Donate" style="width:180px;max-width:90%;border-radius:12px;box-shadow:0 2px 12px #0002;">
+    <img src="bank.png" alt="QR Donate" style="width:180px;max-width:90%;border-radius:12px;box-shadow:0 2px 12px #0002;">
+    <div style="margin: 1rem 0;">
+      <span id="copyBankNumber" style="display:inline-block;padding:8px 18px;font-family: Verdana, Geneva, Tahoma, sans-serif;background:linear-gradient(45deg,#000000,#f4b2fa);color:#fff;font-weight:bold;border-radius:8px;cursor:pointer;user-select:all;font-size:1.1rem;">
+        999991162005
+      </span>
+      <span id="copySuccessMsg" style="display:none;margin-left:10px;color:#4ecdc4;font-weight:bold;">Đã copy!</span>
+    </div>
+    <p style="margin-bottom:1rem;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #16213e;">Mình đã bỏ ra một buổi sáng để làm ra website này, hy vọng nó sẽ giúp ích được gì đó cho mọi người 💗</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('donateBtn').addEventListener('click', function() {
+    document.getElementById('donateDialog').style.display = 'flex';
+});
+document.getElementById('closeDonateDialog').addEventListener('click', function() {
+    document.getElementById('donateDialog').style.display = 'none';
+});
+// Copy số tài khoản
+document.getElementById('copyBankNumber').onclick = function() {
+    navigator.clipboard.writeText('999991162005').then(function() {
+        document.getElementById('copySuccessMsg').style.display = 'inline';
+        setTimeout(function() {
+            document.getElementById('copySuccessMsg').style.display = 'none';
+        }, 1500);
+    });
+};
+</script>
+    </div>
+    <script type="module">
+    
+    // Hàm vẽ pattern trái tim xung quanh QR
+    function drawHeartPattern(canvas, size) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = size;
+        canvas.height = size;
+        
+        // Clear canvas
+        ctx.clearRect(0, 0, size, size);
+        
+        // Tạo pattern nhỏ giống QR code
+        const dotSize = 2;
+        const gap = 1;
+        const step = dotSize + gap;
+        
+        // Tạo nhiều lớp trái tim với kích thước khác nhau
+        for (let layer = 0; layer < 3; layer++) {
+            const scale = 0.8 + layer * 0.4;
+            
+            for (let x = 0; x < size; x += step) {
+                for (let y = 0; y < size; y += step) {
+                    const centerX = size / 2;
+                    const centerY = size / 2;
+                    const relX = (x - centerX) / (size * 0.3 * scale);
+                    const relY = (y - centerY) / (size * 0.3 * scale);
+                    
+                    // Công thức hình trái tim
+                    const heartEq = Math.pow(relX * relX + relY * relY - 1, 3) - relX * relX * Math.pow(relY, 3);
+                    
+                    const distFromCenter = Math.sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
+                    const isInHeartShape = heartEq <= 0;
+                    const isNotInCenter = distFromCenter > size * 0.2;
+                    
+                    if (isInHeartShape && isNotInCenter) {
+                        const opacity = (0.15 + layer * 0.05) * (distFromCenter / (size * 0.4));
+                        const colors = ['#ff6b9d', '#4ecdc4', '#ffd93d'];
+                        ctx.fillStyle = colors[layer] + Math.floor(opacity * 255).toString(16).padStart(2, '0');
+                        
+                        if (Math.random() > 0.4 - layer * 0.1) {
+                            ctx.fillRect(x, y, dotSize, dotSize);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Hàm tạo QR với kiểm tra thư viện
+    async function createHeartQR(galaxyUrl) {
+        // Kiểm tra xem QRCodeStyling đã load chưa
+        if (typeof QRCodeStyling === 'undefined') {
+            console.error('QRCodeStyling chưa được load!');
+            // Fallback: tạo QR đơn giản
+            return createSimpleQR(galaxyUrl);
+        }
+
+        const qrDiv = document.getElementById('qrCode');
+        qrDiv.innerHTML = "";
+
+        // Tạo container
+        const qrContainer = document.createElement('div');
+        qrContainer.style.position = 'relative';
+        qrContainer.style.display = 'inline-block';
+        qrContainer.style.background = 'white';
+        qrContainer.style.padding = '20px';
+        qrContainer.style.borderRadius = '25px';
+        qrContainer.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+
+        // Canvas cho pattern trái tim
+        const heartCanvas = document.createElement('canvas');
+        heartCanvas.style.position = 'absolute';
+        heartCanvas.style.top = '0';
+        heartCanvas.style.left = '0';
+        heartCanvas.style.zIndex = '1';
+        heartCanvas.style.pointerEvents = 'none';
+
+        // Div cho QR code chính
+        const qrCodeDiv = document.createElement('div');
+        qrCodeDiv.style.position = 'relative';
+        qrCodeDiv.style.zIndex = '2';
+
+        try {
+            const qrCode = new QRCodeStyling({
+                width: 200,
+                height: 200,
+                data: galaxyUrl,
+                image: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2764.png",
+                dotsOptions: {
+                    color: "#ff6b9d",
+                    type: "rounded"
+                },
+                backgroundOptions: {
+                    color: "rgba(255, 255, 255, 0.9)"
+                },
+                imageOptions: {
+                    crossOrigin: "anonymous",
+                    margin: 6,
+                    imageSize: 0.2
+                },
+                cornersSquareOptions: {
+                    color: "#ff6b9d",
+                    type: "extra-rounded"
+                },
+                cornersDotOptions: {
+                    color: "#ff6b9d",
+                    type: "dot"
+                }
+            });
+
+            // Vẽ pattern trái tim
+            drawHeartPattern(heartCanvas, 240);
+
+            // Ghép các thành phần
+            qrContainer.appendChild(heartCanvas);
+            qrContainer.appendChild(qrCodeDiv);
+            qrDiv.appendChild(qrContainer);
+
+            // Append QR code
+            qrCode.append(qrCodeDiv);
+
+        } catch (error) {
+            console.error('Lỗi tạo QR fancy:', error);
+            // Fallback
+            createSimpleQR(galaxyUrl);
+        }
+    }
+
+    // Hàm tạo QR đơn giản khi lỗi
+    function createSimpleQR(galaxyUrl) {
+        const qrDiv = document.getElementById('qrCode');
+        qrDiv.innerHTML = `
+            <div style="padding: 20px; background: white; border-radius: 15px; color: #333;">
+                <p><strong>Link Galaxy của bạn:</strong></p>
+                <div style="word-break: break-all; font-family: monospace; background: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                    ${galaxyUrl}
+                </div>
+                <p><em>QR Code sẽ hiển thị sau khi thư viện load xong</em></p>
+            </div>
+        `;
+        
+        // Thử tạo lại sau 2 giây
+        setTimeout(() => {
+            if (typeof QRCodeStyling !== 'undefined') {
+                createHeartQR(galaxyUrl);
+            }
+        }, 2000);
+    }
+
+    // === PHẦN CODE CỦA BẠN (giữ nguyên) ===
+    
+    // Xử lý chọn icon
+    const iconOptions = document.querySelectorAll('.icon-option');
+    let selectedIcons = ["♥", "💖", "💕", "💗"];
+    const customIconsInput = document.getElementById('customIcons');
+
+    iconOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            iconOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedIcons = JSON.parse(option.dataset.icons);
+            customIconsInput.value = "";
+        });
+    });
+    
+    customIconsInput.addEventListener('input', () => {
+        if (customIconsInput.value.trim() !== "") {
+            iconOptions.forEach(opt => opt.classList.remove('selected'));
+        }
+    });
+    
+    // Xử lý color picker
+    const colorInputs = document.querySelectorAll('input[type="color"]');
+    colorInputs.forEach(input => {
+        input.addEventListener('change', (e) => {
+            const preview = e.target.parentElement.querySelector('.color-preview');
+            preview.style.background = e.target.value;
+        });
+    });
+    
+async function uploadImageToCloudinary(file) {
+    const url = `https://api.cloudinary.com/v1_1/djwhhnpoc/image/upload`;
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'DearLove'); // Đúng với preset bạn đã tạo
+
+    const response = await fetch(url, {
+        method: 'POST',
+        body: formData
+    });
+    const data = await response.json();
+    return data.secure_url;
+}
+
+    // Xử lý form submit
+    document.getElementById('galaxyForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+
+        submitBtn.disabled = true;
+        loading.style.display = 'block';
+        result.style.display = 'none';
+
+        try {
+            const messages = document.getElementById('messages').value
+                .split('\n')
+                .filter(msg => msg.trim() !== '')
+                .map(msg => msg.trim());
+            
+            let icons = selectedIcons;
+            if (customIconsInput.value.trim() !== "") {
+                icons = customIconsInput.value.split(",").map(i => i.trim()).filter(i => i !== "");
+            }
+
+            // Upload ảnh lên Cloudinary
+            let imageUrls = [];
+            if (imagesInput.files.length > 0) {
+                const uploadPromises = Array.from(imagesInput.files).slice(0, 5).map(file => uploadImageToCloudinary(file));
+                imageUrls = await Promise.all(uploadPromises);
+            }
+
+            const galaxyData = {
+                messages: messages,
+                icons: icons,
+                colors: document.getElementById('colorMain').value,
+                isHeart: isHeartCheckbox.checked,
+                textHeart: isHeartCheckbox.checked ? textHeartInput.value.trim() : "",
+                isSave: document.getElementById('isSave').checked,
+                song: customSongUrl.value.trim() !== '' ? customSongUrl.value.trim() : songSelect.value,
+                images: imageUrls,
+                createdAt: new Date().toISOString()
+            };
+
+            console.log('Galaxy data:', galaxyData);
+            
+            // Gửi dữ liệu lên backend mới
+            const response = await fetch('https://dearlove-backend.onrender.com/api/galaxies', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(galaxyData)
+            });
+
+            if (!response.ok) throw new Error('Lỗi khi tạo galaxy');
+
+            const data = await response.json();
+            // Lấy id từ kết quả trả về (dữ liệu trả về là { data: { ... } })
+const galaxyId = data.data && data.data._id;
+if (!galaxyId) {
+    alert('Không lấy được ID galaxy. Vui lòng thử lại!');
+    throw new Error('Không lấy được ID galaxy');
+}
+
+// Tạo link
+const galaxyUrl = `${window.location.origin}/galaxy-viewer.html?id=${galaxyId}`;
+
+            // Hiện kết quả
+            loading.style.display = 'none';
+            result.style.display = 'block';
+            
+            document.getElementById('resultLink').textContent = galaxyUrl;
+            document.getElementById('viewBtn').href = galaxyUrl;
+            
+            // Xử lý copy link
+            document.getElementById('copyBtn').addEventListener('click', () => {
+                navigator.clipboard.writeText(galaxyUrl).then(() => {
+                    const copyBtn = document.getElementById('copyBtn');
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = '✅ Đã copy!';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                });
+            });
+            const heartQRBtn = document.getElementById('heartQRBtn');
+            heartQRBtn.onclick = function() {
+                window.location.href = `heartqr.html?qr=${encodeURIComponent(galaxyUrl)}`;
+            };
+
+            // Tạo QR code với hiệu ứng trái tim
+            await createHeartQR(galaxyUrl);
+
+           const thankDialog = document.createElement('div');
+thankDialog.id = 'thankDialog';
+
+thankDialog.innerHTML = `
+  <div class="thank-dialog-overlay">
+    <div class="thank-dialog-box">
+      <div class="thank-dialog-message">
+        <h4>Xong rùi đó!</h4> 
+        
+        <br>Mình bỏ ra một ngày để làm nên hãy follow 
+        <a href="https://www.tiktok.com/@_ng.nhuvu?is_from_webapp=1&sender_device=pc" target="_blank">tiktok</a>
+        mình để mình có thêm động lực nhé!
+        <br>
+        Nếu bạn muốn website hoạt động lâu dài thì có thể donate cho mình một chút ít để mình có phí trả tiền server hosting cho mọi người nhaaa.
+        <br>
+        Donate bằng cách ấn vào nút 💖 ở góc phải ạ.
+        <br>Cảm ơn bạn. Chúc bạn có một ngày thật tuyệt vời 💗
+      </div>
+      <button id="closeThankDialog" class="thank-dialog-button">OK</button>
+    </div>
+  </div>
+`;
+
+document.body.appendChild(thankDialog);
+
+document.getElementById('closeThankDialog').onclick = function () {
+  thankDialog.remove();
+};
+
+            
+        } catch (error) {
+            console.error('Lỗi khi tạo galaxy:', error);
+            loading.style.display = 'none';
+            alert('Có lỗi xảy ra. Vui lòng thử lại!');
+        }
+        
+        submitBtn.disabled = false;
+    });
+    
+    // Xử lý bài hát (giữ nguyên code cũ)
+    const songSelect = document.getElementById('song');
+    const customSongUrl = document.getElementById('customSongUrl');
+    const checkSongBtn = document.getElementById('checkSongBtn');
+    const customSongAudio = document.getElementById('customSongAudio');
+    const previewDefaultSongBtn = document.getElementById('previewDefaultSongBtn');
+
+    songSelect.addEventListener('change', () => {
+        if (songSelect.value) {
+            customSongUrl.value = '';
+            customSongAudio.style.display = 'none';
+            customSongAudio.pause();
+        }
+    });
+    
+    customSongUrl.addEventListener('input', () => {
+        if (customSongUrl.value.trim() !== '') {
+            songSelect.value = '';
+        }
+        customSongAudio.style.display = 'none';
+        customSongAudio.pause();
+    });
+    
+    checkSongBtn.addEventListener('click', () => {
+        const url = customSongUrl.value.trim();
+        if (!url) {
+            alert('Vui lòng nhập link file nhạc!');
+            return;
+        }
+        customSongAudio.src = url;
+        customSongAudio.style.display = 'block';
+        customSongAudio.play().catch(() => {
+            alert('Không phát được file nhạc này. Hãy kiểm tra lại link!');
+        });
+    });
+
+    previewDefaultSongBtn.addEventListener('click', () => {
+        const selectedSong = songSelect.value;
+        if (!selectedSong) {
+            alert('Vui lòng chọn một bài hát có sẵn!');
+            return;
+        }
+        customSongAudio.src = `songs/${selectedSong}`;
+        customSongAudio.style.display = 'block';
+        customSongAudio.play().catch(() => {
+            alert('Không phát được file nhạc này!');
+        });
+    });
+
+const imagesInput = document.getElementById('images');
+const imagePreview = document.getElementById('imagePreview');
+
+imagesInput.addEventListener('change', () => {
+    imagePreview.innerHTML = '';
+    Array.from(imagesInput.files).slice(0, 5).forEach(file => {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.style.width = '60px';
+        img.style.height = '60px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '10px';
+        imagePreview.appendChild(img);
+    });
+});
+
+const isHeartCheckbox = document.getElementById('isHeart');
+const textHeartInput = document.getElementById('textHeart');
+isHeartCheckbox.addEventListener('change', () => {
+    textHeartInput.style.display = isHeartCheckbox.checked ? 'block' : 'none';
+});
+</script>
+
+    <script src="../cdn.jsdelivr.net/npm/qr-code-styling%401.5.0/lib/qr-code-styling.js"></script>
+</body>
+
+<!-- Mirrored from dearlovevn.vercel.app/creator.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 18:16:02 GMT -->
+</html>

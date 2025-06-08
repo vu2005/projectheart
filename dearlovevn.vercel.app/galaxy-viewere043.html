@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<!-- Mirrored from dearlovevn.vercel.app/galaxy-viewer.html?demo=1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 18:16:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>DearLove - Hạnh phúc bắt nguồn từ những thứ nhỏ nhặt nhất</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="galaxy-viewer.css">
+
+<!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="💕 Tin Nhắn Dành Cho Bạn - DearLove">
+    <meta property="og:description" content="bạn là người rất đặc biệt khi được nhận tin này đấy :>. Chúc bạn luôn hạnh phúc nhé!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="DearLove">
+    <meta property="og:locale" content="vi_VN">
+
+   <!-- Favicon -->
+        <link rel="icon" type="image/png" href="logo.png">
+
+</head>
+
+
+<body>
+    <!-- Loading -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <h2>Những điều tốt đẹp đều cần thời gian...</h2>
+        <p>Vui lòng đợi trong giây lát</p>
+    </div>
+    <!-- Error -->
+    <div class="error-screen" id="errorScreen">
+        <div class="error-icon">😢</div>
+        <h2>Không tìm thấy website</h2>
+        <p>Link này có thể đã hết hạn hoặc không tồn tại.</p>
+        <a href="index-2.html" class="back-home">🏠 Về trang chủ</a>
+    </div>
+    <!-- Galaxy -->
+    <div class="galaxy-container" id="galaxy"></div>
+    <!-- Heart -->
+    <div class="heart-container" id="heartContainer">
+        <canvas id="pinkboard"></canvas>
+        <div class="heart-text" id="heartText"></div>
+    </div>
+    <!-- Audio -->
+    <audio id="galaxyAudio" controls style="display:none"></audio>
+    <script type="module" src="galaxy-viewer.js"></script>
+
+
+     <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTY3RQNXTE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GTY3RQNXTE');
+      
+      // Track message view
+      gtag('event', 'message_view', {
+        event_category: 'engagement',
+        event_label: 'galaxy_message'
+      });
+    </script>
+
+    <!-- Copyright footer xuất hiện 3s đầu -->
+<div id="copyrightFooter" style="
+    position:fixed;
+    bottom:12px;
+    right:14px;
+    z-index:9999;
+    color:#fff;
+    font-size:11px;
+    opacity:0.7;
+    font-family:'Orbitron',sans-serif;
+    background:rgba(0,0,0,0.25);
+    padding:4px 14px;
+    border-radius:18px;
+    pointer-events:none;
+    transition: opacity 0.5s;
+">
+    © 2025 website này được free bởi <a href="https://www.tiktok.com/@_ng.nhuvu" target="_blank" style="color:#fff;text-decoration:underline;font-weight:bold;pointer-events:auto;">_ng.nhuvu</a>
+</div>
+<script>
+    setTimeout(function() {
+        var f = document.getElementById('copyrightFooter');
+        if(f) f.style.opacity = '0';
+    }, 3000);
+    setTimeout(function() {
+        var f = document.getElementById('copyrightFooter');
+        if(f) f.style.display = 'none';
+    }, 3500);
+</script>
+</body>
+
+<!-- Mirrored from dearlovevn.vercel.app/galaxy-viewer.html?demo=1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 18:16:03 GMT -->
+</html>
